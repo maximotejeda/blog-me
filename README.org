@@ -8,15 +8,15 @@ As an Org user i want to be able to write my text in Org-mode in emacs and manag
 
 ** Stack
 As my main stack i'll be using:
-Go: for my Rest service and Templates generator.
-Emacs: as my editing tool and latext to export to a convenient format.
-Docker to create an image with my binary
- - SQLite: for and independant service to manage Comment in a future
- - Ingress: to expose the service to the internet through a domain
- - kubernets to orquestrate all my secrets and services.
+- Go: for my Rest service and Templates generator.
+- Emacs: as my editing tool and latext to export to a convenient format.
+- Docker: to create an image with my binary
+- SQLite: for and independant service to manage Comment in a future
+- Ingress: to expose the service to the internet through a domain
+- kubernets to orquestrate all my secrets and services.
 
 ** The Structure
-The Project will  be structured as fallow:
+The Project will  be structured as follow:
 - cmd: will contain the main file where the service will be build
 - Internal: Will contains the package that will be accessed through main to make different tasks
 - web: Will contain the templates for the differents places in the Blog.
