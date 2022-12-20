@@ -1,5 +1,7 @@
 export DEBUG=true
-export FILESDIR=./files
+export SERVERADDR=
+export SERVERPORT=8080
+export FILESDIR=./posts
 export ASSETSDIR=./posts/assets
 
 PHONY: all, clean, build, container, push, run
