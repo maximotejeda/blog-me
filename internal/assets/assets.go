@@ -2,13 +2,14 @@ package assets
 
 import (
 	"blog-me/internal/router"
-	"fmt"
+	"os"
+
 	"net/http"
 )
 
 var (
-	AssetsRoute = router.NewRegexpRouter()
-	//assetsRoute = os.Getenv("ASSESTSDIR")
+	AssetsRoute *router.RegexpRouter = router.NewRegexpRouter()
+	assets      string               = os.Getenv("ASSETSDIR")
 )
 
 func init() {
@@ -17,7 +18,6 @@ func init() {
 
 // Route for serving images
 func assetsServer(w http.ResponseWriter, r *http.Request) {
-	fs := http.FileServer(http.Dir("./posts/assets/"))
-	fmt.Println(r.URL.Path)
+	fs := http.FileServer(http.Dir(assets))
 	http.StripPrefix("/assets/", fs).ServeHTTP(w, r)
 }
