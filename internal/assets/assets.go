@@ -13,7 +13,7 @@ var (
 )
 
 func init() {
-	AssetsRoute.Add("(GET|HEAD) /assets/(css|images|fonts)/[-_a-zA-Z0-9]{1,40}\\.(css|img|png|jpg|jpeg)$", assetsServer)
+	AssetsRoute.Add("(GET|HEAD) /assets/(css|images|fonts|js)/[-_a-zA-Z0-9]{1,40}\\.(css|img|png|jpg|jpeg|js|svg)$", assetsServer)
 }
 
 // Route for serving images
