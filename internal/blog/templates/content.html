@@ -1,0 +1,54 @@
+<div class="content-root">
+    <div class="left-side"></div>
+    <div class="mid-side content">
+    {{ if .Post.Title }}
+    {{.Post.Content | safeHTML}}
+    {{else}}
+    {{if .Posts}}
+        <div class="content-inside">
+            {{range $val := .Posts}}
+            <div class="post-list-item">
+                        <a class="post-list-item-link" href="/?title={{unSafeHTML $val.Title}}"> <p class="post-list-item-link-title">{{$val.Title}}</p></a> 
+                        <p class="post-list-item-date">{{formatDate $val.Created}}</p>
+                        {{if $val.Tags}}
+                        <div class="post-list-item-image">
+                            {{range $item := split $val.Tags ","}}
+                            <a href="/?label={{$item}}">
+                                <img src="assets/images/{{$item}}.png" alt="{{$item}} " height="35"/>
+                            </a>
+                            {{end}}
+                        </div>
+                    {{end}}
+                
+            </div>
+ 
+            {{end}}
+            <div class="bottom-nav">
+                {{if gt .ActualPage 1}}
+                <a class="bottom-nav-back" href="/?page={{decPage .ActualPage}}">Back</a>
+              {{end}}
+                {{if gt .Pages .ActualPage}}
+                <a class="bottom-nav-next" href="/?page={{incPage .ActualPage}}">next</a>
+                {{end}}
+          
+            </div>
+        </div>
+        {{else}}
+            <h2>No Content Found</h2>
+            <p>You can go back to Home page <a href="/?page=1">Page 1</a></p>
+        {{end}}
+        {{end}}
+    </div>
+    <div class="mid-side-tab">
+        <div class="mid-side-tab-info">
+            <a href="https://github.com/maximotejeda" target="_blank" rel="noreferrer noopener">
+                <img alt="Maximo Tejeda" class="avatar mid-side-tab-info-avatar" src="https://avatars.githubusercontent.com/u/25188792?v=4" width="80" height="80">
+            </a>
+            <p class="mid-side-tab-info-text"> <b>Maximo Tejeda</b> is a Software Developer living in Dominican Republic who enjoy working, reading and learning new technologies.</p>
+            <div class="mid-side-tab-info-links">
+                <a class="mid-side-tab-info-links-lik" href="https://github.com/maximotejeda/blog-me" target="_blank" rel="noreferrer noopener">(This| Self) Github Repo</a>
+            </div>
+        </div>
+    </div>
+    <div class="right-side"></div>
+</div>

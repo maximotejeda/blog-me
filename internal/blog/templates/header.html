@@ -1,0 +1,8 @@
+<nav class="navigation"> 
+   {{ $Where := .Where }}
+   <ul class="navigation-list">
+    <li class="navigation-list-item home"><a class="home route {{ if eq $Where `base` }} here {{end}}" href="/"> Home </a></li>
+    <li class="navigation-list-item contact"><a class="contact route {{ if eq $Where `contact` }} here {{end}}" href="/?title=contact">Contact Me!</a></li>
+    <li class="navigation-list-item about"><a class="about route {{ if eq $Where `about` }} here {{end}}" href="/?title=about">About</a></li>
+   </ul>
+</nav>
