@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content-root {
+    display: flex;
+}
+.left-side {
+    width: 25%;
+}
+.mid-side{
+    width: 40%;
+}
+.mid-side-tab{
+    width: 15%;
+}
+.right-side{
+    width: 20%;
+}
+.content-inside{
+    display: flex;
+    flex-direction: column;
+   
+    margin-top: 3em;
+}
+.post-list-item{
+    display: flex;
+    
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 0 0 5px 0;
+  
+    width: 100%;
+    margin: auto;
+    height: 7em;
+}
+.post-list-item:hover{
+    background-color: rgba(244, 244, 250, 0.3);
+    transition: ease 0.7s;
+}
+.post-list-item-root{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 0.1em;
+    margin-left: 0.7em;
+}
+.post-list-item a{
+    text-decoration: none;
+    color: black;
+}
+.post-list-item-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.post-list-item-info a,p{
+    margin: auto;
+}
+
+.post-list-item-info-title{
+    font-weight: 700;
+    font-size: medium;
+    text-transform: capitalize;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45ch;
+
+}
+.post-list-item-info-date{
+    font-weight: 300;
+    font-size: small;
+}
+.title {
+    text-transform: capitalize;
+}
+.post-list-item-image{
+    display: flex;
+    justify-content: end;
+    margin-top: auto;
+    
+}
+.content.post.tag{
+    font-size: medium;
+    font-weight: 600;
+    border-radius: 15%;
+    display: inline-flex;
+  align-items: center;
+  border: 1px solid white;
+}
+.content.post.tag:hover{
+    border: 1px solid rgb(227, 240, 240);
+    background-color: aliceblue;
+    
+}
+.tags {
+    margin: auto 0px 10px 0px;
+}
+#tags-container{
+    display: flex;
+    gap: 1em;
+    border-bottom: 0.2px solid rgba(165, 42, 42, 0.2);
+}
+.tag-item{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: rgb(50, 51, 51);
+    padding: 3px 10px 3px 10px
+    
+}
+.tag-item:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    color:whitesmoke
+}
+
+@media only screen and (max-width: 750px){
+    .left-side {
+        width: 3%;
+    }
+    .mid-side{
+        width: 70%;
+    }
+
+}

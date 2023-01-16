@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.content-root{
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+    min-height: 100%;
+    padding-bottom: 100px;
+}
+.left-side{
+    width: 20%;
+}
+.mid-side{
+    width: 44%;
+    margin: 10px 20px 0px 0px;
+
+}
+.mid-side-tab{
+    width: 15%;
+}
+.right-side{
+    width: 20px;
+}
+
+.post-list-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: 0px 1px 1px 0px rgba(7, 7, 7, 0.3);
+}
+
+.post-list-item{
+    border-bottom: 0.5px solid rgba(7, 7, 7, 0.3);
+
+}
+
+/* Modify post-list-item */
+.post-list-item-link{
+    text-decoration: none;
+    flex-grow: 1;
+    
+}
+.post-list-item-link-title{
+    color: black;
+    text-transform: capitalize;
+    margin: 20px 0 0 0;
+    text-overflow: ellipsis;
+    max-width: 65ch;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.post-list-item-date{
+    margin: 0 5px;
+    font-size: small;
+    align-self: flex-end;
+    color: rgba(7, 7, 7, 0.5);
+    
+}
+.post-list-item-image{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 0 10px 0;
+}
+.mid-side-tab-info{
+    margin-left: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+.mid-side-tab-info-avatar{
+    border-radius: 50%;
+    margin-left: 10px;
+    }
+/* Inside a Post */
+.title{
+    text-transform: capitalize;
+    font-size: x-large;
+}
+#content h2,h1,h3 {
+    font-size: large;
+}
+#tags-container{
+    width: 100%;
+    margin: 15px 10px 15px 0px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 5px;
+
+}
+
+#tags-container a{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.4);
+    padding: 0 4px 0 4px;
+    text-transform: capitalize;
+    transition: ease 0.5s;
+}
+#tags-container a:hover{
+    color:white;
+    background-color: dimgray;
+    font-weight: 600;
+
+}
+#footer{
+    height: 100px;
+    margin-top: -100px;
+    display: flex;
+    width: 80%;
+    align-items: center;
+}
+#footer >p{
+    margin: 0 auto 0 auto;
+}
+/* Mediquery for reduced screens*/
+@media only screen and (max-width: 750px){
+    .content-root{
+        flex-direction: column;
+    }
+    .left-side{
+        height: 4%;
+    }
+    .mid-side{
+        
+        width: 97%;
+        margin-left: 3%;
+    }
+    .mid-side-tab{
+        width: 97%;
+        margin-top: auto;
+    }
+    .right-side{
+        width: 3px;
+    }
+    .post-list-item-link-title{
+        max-width: 47ch;
+    }
+}
