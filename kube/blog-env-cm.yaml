@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: blog-env-cm
+  namespace: default
+data:
+  DEBUG: "true"
+  SERVERPORT: "8080"
+  FILESDIR: "./posts"
+  ASSETSDIR: "./assets"
+  DBDIR: "./db"
+  DBFILE: "blog.db"

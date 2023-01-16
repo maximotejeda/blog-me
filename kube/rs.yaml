@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+  name: blog-replica
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchExpressions:
+    - key: app
+      operator: In
+      values:
+      - blog
+  template:
+    metadata:
+      labels:
+        app: blog
+        language: go
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: blog-env-cm
+        image: localhost:32000/blog-me
+        imagePullPolicy: Always
+        name: blog
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /db
+          name: blog-db
+        - mountPath: /assets
+          name: blog-assets
+        - mountPath: /posts
+          name: blog-posts
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: blog-db
+        persistentVolumeClaim:
+          claimName: blog-db-nfs-pvc
+      - name: blog-assets
+        persistentVolumeClaim:
+          claimName: blog-assets-nfs-pvc
+      - name: blog-posts
+        persistentVolumeClaim:
+          claimName: blog-posts-nfs-pvc
