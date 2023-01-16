@@ -3,3 +3,7 @@ posts/other.org
 posts/new.org
 posts/hi.org
 bin/*
+schema.drawio
+assets/images/*
+/db
+/posts/*
