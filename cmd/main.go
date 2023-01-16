@@ -3,6 +3,7 @@ package main
 import (
 	"blog-me/internal/assets"
 	"blog-me/internal/blog"
+	_ "blog-me/internal/database"
 	"log"
 	"net/http"
 	"os"
@@ -18,5 +19,6 @@ var (
 func main() {
 	http.Handle("/assets/", asets)
 	http.Handle("/", br)
-	log.Fatal(http.ListenAndServe(addr+":"+port, nil))
+	go log.Fatal(http.ListenAndServe(addr+":"+port, nil))
+
 }
