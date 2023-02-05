@@ -21,9 +21,9 @@ deploy:
 	ssh -C w1 "cd ~/golang/blog-me/ && make image && docker push localhost:32000/blog-me"
 
 copystatic:
-	rsync -rv ./assets/* w1:/srv/ext/nfsShare/kubernetes/volumes/pvc-01f1e42f-d09e-4b61-9287-c35b35ad29cc
+	rsync -rv ./assets/* w1:/srv/ext/nfsShare/kubernetes/volumes/pvc-81221464-1ff2-4340-99da-976b59acedba
 copypost:
-	rsync -rv ./posts/*.html w1:/srv/ext/nfsShare/kubernetes/volumes/pvc-dc99034b-2746-42ad-aa38-2e2f175846d9
+	rsync -rv ./posts/*.html w1:/srv/ext/nfsShare/kubernetes/volumes/pvc-22e3bc14-8660-4703-b2d3-055b37dcf74d
 test:
 	go test ./...
 clean:
